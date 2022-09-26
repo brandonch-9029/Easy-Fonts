@@ -1,5 +1,7 @@
 import convert
+import shutil
 
-def convertTTF(fontfile,foldername):
-    convert.TTFtoWOFF(fontfile,foldername)
-    convert.TTFtoWOFF2(fontfile,foldername)
+def convertWOFF2(fontfile,foldername):
+    newTTFname = convert.WOFFtoTTF(fontfile,foldername)
+    convert.WOFF2toTTFtoWOFF(newTTFname)
+    shutil.copyfile(fontfile, foldername + '/' + fontfile)

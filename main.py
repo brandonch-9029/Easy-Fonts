@@ -1,6 +1,6 @@
-import generate, originalTTF, os
+import os, generateCSS, originalTTF, originalWOFF, originalWOFF2
 
-fontfile = "Ubuntu-Regular.ttf"
+fontfile = "Ubuntu-Regular.woff2"
 foldername = "uniquefolder"
 
 def main(fontfile, foldername, fontname):
@@ -15,7 +15,8 @@ def main(fontfile, foldername, fontname):
 
     elif fileext == ".woff2":
         originalWOFF2.convertWOFF2(fontfile,foldername)
+    
 
-    generate.generateCSS(fontfile, fontname, foldername)
+    generateCSS.generateCSS(fontfile, fontname, foldername)
 
 main(fontfile,foldername,"Ubuntu")
