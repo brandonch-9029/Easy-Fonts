@@ -2,6 +2,7 @@ import os, generateCSS, originalTTF, originalWOFF, originalWOFF2
 
 fontfile = "Ubuntu-Regular.woff2"
 foldername = "uniquefolder"
+fontname = "Ubuntu"
 
 def main(fontfile, foldername, fontname):
     os.mkdir(foldername)
@@ -19,4 +20,4 @@ def main(fontfile, foldername, fontname):
 
     generateCSS.generateCSS(fontfile, fontname, foldername)
 
-main(fontfile,foldername,"Ubuntu")
+main(fontfile,foldername,fontname)
