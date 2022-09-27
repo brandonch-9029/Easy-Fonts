@@ -1,5 +1,9 @@
 import os, generateCSS, generateFormats
 
+fontfile = "Ubuntu-Regular.woff2"
+foldername = "uniquefolder"
+fontname = "Ubuntu"
+
 def main(fontfile, foldername, fontname):
     os.mkdir(foldername)
     fileext = str(os.path.splitext(fontfile)[1])
@@ -14,3 +18,5 @@ def main(fontfile, foldername, fontname):
         generateFormats.convertWOFF2(fontfile,foldername)
     
     generateCSS.generateCSS(fontfile, fontname, foldername)
+
+main(fontfile,foldername,fontname)

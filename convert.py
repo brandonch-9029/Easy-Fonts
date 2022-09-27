@@ -1,6 +1,8 @@
 from fontTools.ttLib import TTFont
 import os
 
+# This file contains the functions that perform a direct conversion from one file format to another
+
 # TTF to WOFF
 def TTFtoWOFF(filename, folder):
     f = TTFont(filename)
