@@ -14,3 +14,5 @@ def main(fontfile, foldername, fontname):
         generateFormats.convertWOFF2(fontfile,foldername)
     
     generateCSS.generateCSS(fontfile, fontname, foldername)
+
+main('Ubuntu-Regular.ttf','testfolder','Ubuntu')
