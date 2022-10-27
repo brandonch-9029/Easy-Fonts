@@ -1,5 +1,10 @@
-import os
+from fontTools import ttLib
 
-directorylist = [item for item in os.listdir("tasks") if os.path.isdir(os.path.join("tasks", item))]
+fontPath = "input.ttf"
 
-print(directorylist)
+font = ttLib.TTFont(fontPath)
+fontFamilyName = font['name'].getDebugName(1)
+fullName= font['name'].getDebugName(4)
+
+print(fontFamilyName)
+print(fullName)

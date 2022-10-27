@@ -5,31 +5,11 @@
 {% endblock %}
 
 {% block body %}
-<div class="row">
-  <div class="col">
-    <form class="input-group input-bar mb-3" action="/upload" method="POST" enctype="multipart/form-data">
-      <input type="file" class="form-control" name="file" accept=".ttf, .woff, .woff2"> 
-      <input class="input-group-text btn-secondary" type="submit">
-    </form>
-  </div>
-  <div class="col">
-      <div class="highlight-toolbar bg-light ps-3 pe-2 py-1 rounded-top border border-bottom-0">
-        <small class="font-monospace text-muted text-uppercase">css</small>
-      </div>
-      <div class="highlight-toolbar bg-light border rounded-bottom">
-        <pre><code>
-@font-face {
-  font-family: 'Roboto Mono';
-  src: url('RobotoMono-Regular.woff2') format('woff2'),
-      url('RobotoMono-Regular.woff') format('woff'),
-      url('RobotoMono-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-        </code></pre>
-      </div>
-  </div>
 
-</div>
+<form class="input-group input-bar mb-3" action="/upload" method="POST" enctype="multipart/form-data">
+  <input type="file" class="form-control" name="file" accept=".ttf, .woff, .woff2"> 
+  <input class="input-group-text btn-secondary" type="submit">
+</form>
+
+
 {% endblock %}
