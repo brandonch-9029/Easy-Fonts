@@ -17,7 +17,7 @@
       <small class="font-monospace text-muted text-uppercase">File Information</small>
     </div>
     <div class="bg-light border rounded-bottom">
-      Font Name : {{ text }} <br>
+      Font Name : {{ fontNameJinja }} <br>
       Font Upload Location : {{ taskDirectoryJinja }}
     </div>
   </div>
@@ -28,10 +28,10 @@
       <div class="bg-light border rounded-bottom">
         <pre><code>
 @font-face {
-  font-family: '{{ text }}';
-  src: url('RobotoMono-Regular.woff2') format('woff2'),
-      url('RobotoMono-Regular.woff') format('woff'),
-      url('RobotoMono-Regular.ttf') format('truetype');
+  font-family: '{{ fontNameJinja }}';
+  src: url('{{fileNameJinja}}.woff2') format('woff2'),
+      url('{{fileNameJinja}}.woff') format('woff'),
+      url('{{fileNameJinja}}.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
