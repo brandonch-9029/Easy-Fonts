@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 
 from fontTools import ttLib
 
+import shutil
 import os
 import modules.generateFormats
+import modules.generateCSS
 
 app = Flask(__name__)
 
@@ -49,15 +51,34 @@ def upload_file():
     #if ttf, convert to woff and woff2
     if uploaded_file.filename.endswith('.ttf'):
         uploaded_file_name = uploaded_file.filename[:-4]
-        modules.generateFormats.convertTTF(font_path,new_folder)
+        modules.generateFormats.convertTTF(font_path)
 
     elif uploaded_file.filename.endswith('.woff'):
-        uploaded_file_name = uploaded_file.filename[:-4]
+        uploaded_file_name = uploaded_file.filename[:-5]
+        modules.generateFormats.convertWOFF(font_path)
     
     elif uploaded_file.filename.endswith('.woff2'):
-        uploaded_file_name = uploaded_file.filename[:-5]
+        uploaded_file_name = uploaded_file.filename[:-6]
+        modules.generateFormats.convertWOFF2(font_path)
+
+    # create css file for fonts
+    modules.generateCSS.generateCSS(font_path, font_name, new_folder)
+
+    # once fonts and css are complete, zip the task directory
+    shutil.make_archive(new_folder,'zip', new_folder)
+    package_name = new_folder + '.zip'
 
     return redirect(url_for('load',fileName=uploaded_file_name, fontName=font_name, taskDirectory=next_task_index))
+
+@app.route('/download', methods=['GET'])
+def download():
+
+    base_directory = "tasks"
+    directory_list = [item for item in os.listdir(base_directory) if os.path.isdir(os.path.join(base_directory, item))]
+    directory_list = [int(x) for x in directory_list]
+    latest_task = str(int(max(directory_list)))
+    
+    return send_from_directory('/Easy-Fonts/tasks', latest_task + '.zip')
 
 if __name__ == "__main__":
     app.run(debug=True)

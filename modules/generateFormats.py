@@ -2,14 +2,14 @@ import modules.convert
 
 # converts the original file into other formats then copies it to the new directory
 
-def convertTTF(fontfile,foldername):
-    modules.convert.TTFtoWOFF(fontfile,foldername)
-    modules.convert.TTFtoWOFF2(fontfile,foldername)
+def convertTTF(fontfile):
+    modules.convert.TTFtoWOFF(fontfile)
+    modules.convert.TTFtoWOFF2(fontfile)
 
-def convertWOFF(fontfile,foldername):
-    newTTFname = modules.convert.WOFFtoTTF(fontfile,foldername)
+def convertWOFF(fontfile):
+    newTTFname = modules.convert.WOFFtoTTF(fontfile)
     modules.convert.WOFFtoTTFtoWOFF2(newTTFname)
 
-def convertWOFF2(fontfile,foldername):
-    newTTFname = modules.convert.WOFFtoTTF(fontfile,foldername)
+def convertWOFF2(fontfile):
+    newTTFname = modules.convert.WOFFtoTTF(fontfile)
     modules.convert.WOFF2toTTFtoWOFF(newTTFname)
