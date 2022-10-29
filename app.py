@@ -16,9 +16,19 @@ def index():
     return render_template('index.html')
 
 # load.html
-@app.route('/<fileName>/<fontName>/<taskDirectory>/load', methods=['POST', 'GET'])
-def load(fileName ,fontName, taskDirectory):
-    return render_template('load.html', fileNameJinja=fileName, fontNameJinja=fontName, taskDirectoryJinja=taskDirectory)
+@app.route('/<fileName>/<fontName>/<taskDirectory>/<packageSize>/load', methods=['POST', 'GET'])
+def load(fileName ,fontName, taskDirectory, packageSize):
+    return render_template('load.html', fileNameJinja=fileName, fontNameJinja=fontName, taskDirectoryJinja=taskDirectory, packageSizeJinja=packageSize)
+
+#formats.html
+@app.route('/formats', methods=['GET'])
+def formats():
+    return render_template('formats.html')
+
+#examples.html
+@app.route('/examples', methods=['GET'])
+def examples():
+    return render_template('formats.html')
 
 # route when Submit button with action="/upload" is clicked
 @app.route('/upload', methods=['POST'])
@@ -67,8 +77,10 @@ def upload_file():
     # once fonts and css are complete, zip the task directory
     shutil.make_archive(new_folder,'zip', new_folder)
     package_name = new_folder + '.zip'
+    # returns package size divided by 1024 to get bytes
+    package_size = str(int(os.path.getsize(package_name)/1024))
 
-    return redirect(url_for('load',fileName=uploaded_file_name, fontName=font_name, taskDirectory=next_task_index))
+    return redirect(url_for('load',fileName=uploaded_file_name, fontName=font_name, taskDirectory=next_task_index, packageSize=package_size))
 
 @app.route('/download', methods=['GET'])
 def download():
