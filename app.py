@@ -89,8 +89,15 @@ def download():
     directory_list = [item for item in os.listdir(base_directory) if os.path.isdir(os.path.join(base_directory, item))]
     directory_list = [int(x) for x in directory_list]
     latest_task = str(int(max(directory_list)))
+    latest_task_file = latest_task + ".zip"
+    current_directory = os. getcwd() 
+
+    for root, dirs, files in os.walk(current_directory):
+        if latest_task_file in files:
+            latest_task_path = os.path.join(root, latest_task_file)
+            latest_task_dir = os.path.dirname(latest_task_path)
     
-    return send_from_directory('/Easy-Fonts/tasks', latest_task + '.zip')
+    return send_from_directory(latest_task_dir, latest_task_file)
 
 if __name__ == "__main__":
     app.run(debug=True)
