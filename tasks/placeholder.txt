@@ -1,0 +1,1 @@
+ensures that tasks folder is deployed in container
