@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'easyfonts'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AEB2C49487F146E2B2E008876DAB9FBE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6A26E0695C5F4FE584DA1D1AFFCFE902 }}
