@@ -8,12 +8,111 @@
 
 <div class="container text-center mb-5">
   <h1>EasyFonts</h1>
-  <p>This page is under construction, stay tuned :D</p>
+  <p>Learn more about web font formats and browser compatibility!</p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Browser Compatibility
   </div>
 
-<form class="input-group input-bar mb-3" action="/upload" method="POST" enctype="multipart/form-data">
-  <input type="file" class="form-control" name="file" accept=".ttf, .woff, .woff2"> 
-  <input class="input-group-text btn-secondary" type="submit" value="Convert">
-</form>
+  <p class="mx-3 mt-3 mb-1">
+    This table specifies the earliest browser versions that fully support the listed font formats.
+  </p>
+
+  <div class="card-body">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Desktop</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mobile</a>
+      </li>
+    </ul>
+
+    <table class="table table-striped text-center border">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Chrome</th>
+          <th scope="col">Firefox</th>
+          <th scope="col">Opera</th>
+          <th scope="col">Safari</th>
+          <th scope="col">IE / Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">TTF</th>
+          <td>4</td>
+          <td>3.5</td>
+          <td>10</td>
+          <td>3.1</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <th scope="row">WOFF</th>
+          <td>5</td>
+          <td>3.6</td>
+          <td>11.5</td>
+          <td>5.1</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <th scope="row">WOFF2</th>
+          <td>36</td>
+          <td>39</td>
+          <td>23</td>
+          <td>10</td>
+          <td>14</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">TrueType Font (TTF)</h5>
+        <p class="card-text">Originally designed by Apple, TrueType is used by both Apple and Microsoft in their Mac OS and Windows operating systems. Supported by all major browsers, it useful for extending compatibility to older browser versions, especially on mobile.</p>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Web Open Font Format (WOFF/WOFF2)</h5>
+        <p class="card-text">
+          Now you might be asking yourself, if TrueType has such high compatibility, why should I use any other formats?<br>
+          <br>
+          Allow me to introduce the Web Open Font Format (WOFF). Developed by Mozilla specifically for use on the web, WOFF fonts are compressed versions of TTF or OTF that load significantly faster. It also allows for the inclusion of metadata and license information within the file.<br>
+          <br>
+          Developed by Google, WOFF2 is the next generation of WOFF. The improved compression of WOFF 2.0 offers a 30% average gain over WOFF 1.0. However, it is only compatible with modern browser versions.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Efficiency and Compatibility</h5>
+        <p class="card-text">
+          If your web app is mainly targeting users on modern browsers, you might be able to get away with just WOFF or WOFF2.<br>
+          <br>
+          To expand support to as many legacy browsers as possible, you can use @font-face on CSS to serve multiple fallback font formats in case of failure. EasyFonts was created to help you do this in just a few clicks!<br>
+          <br>
+          <div class="container bg-light rounded">
+<pre><code>
+  @font-face {
+    font-family: 'FontName';
+    src: url('webfont.woff2') format('woff2'), /* Extremely modern browsers */
+         url('webfont.woff') format('woff'), /* Modern browsers */
+         url('webfont.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+ </code></pre>
+          </div>
+          <br>
+          Ready to generate your @font-face package? Head back to the <a href="/">Webfont Generator</a> to get started!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

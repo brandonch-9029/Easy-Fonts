@@ -28,7 +28,7 @@ def formats():
 #examples.html
 @app.route('/examples', methods=['GET'])
 def examples():
-    return render_template('formats.html')
+    return render_template('examples.html')
 
 # route when Submit button with action="/upload" is clicked
 @app.route('/upload', methods=['POST'])
@@ -98,6 +98,39 @@ def download():
             latest_task_dir = os.path.dirname(latest_task_path)
     
     return send_from_directory(latest_task_dir, latest_task_file)
+
+@app.route('/acciaflare', methods=['GET'])
+def acciaflare():
+    sample_font_file = "AcciaFlare-Light.zip"
+    current_directory = os. getcwd()
+    for root, dirs, files in os.walk(current_directory):
+        if sample_font_file in files:
+            sample_font_path = os.path.join(root, sample_font_file)
+            sample_font_dir = os.path.dirname(sample_font_path)
+
+    return send_from_directory(sample_font_dir, sample_font_file)
+
+@app.route('/starrycakes', methods=['GET'])
+def starrycakes():
+    sample_font_file = "StarryCakes.zip"
+    current_directory = os. getcwd()
+    for root, dirs, files in os.walk(current_directory):
+        if sample_font_file in files:
+            sample_font_path = os.path.join(root, sample_font_file)
+            sample_font_dir = os.path.dirname(sample_font_path)
+
+    return send_from_directory(sample_font_dir, sample_font_file)
+
+@app.route('/gonestones', methods=['GET'])
+def gonestones():
+    sample_font_file = "Gonestones.zip"
+    current_directory = os. getcwd()
+    for root, dirs, files in os.walk(current_directory):
+        if sample_font_file in files:
+            sample_font_path = os.path.join(root, sample_font_file)
+            sample_font_dir = os.path.dirname(sample_font_path)
+
+    return send_from_directory(sample_font_dir, sample_font_file)
 
 if __name__ == "__main__":
     app.run(debug=True)

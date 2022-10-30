@@ -1,0 +1,44 @@
+@font-face {        
+	font-family: 'AcciaFlare-Light';        
+	src: url('/static/fonts/AcciaFlare-Light/AcciaFlare-Light.woff2') format('woff2'),        
+	url('/static/fonts/AcciaFlare-Light/AcciaFlare-Light.woff') format('woff'),        
+	url('/static/fonts/AcciaFlare-Light/AcciaFlare-Light.ttf') format('truetype');        
+	font-style: normal;        
+	font-weight: normal;        
+	font-display: swap;        
+}
+
+@font-face {        
+	font-family: 'Gonestones';        
+	src: url('/static/fonts/Gonestones/Gonestone.woff2') format('woff2'),        
+	url('/static/fonts/Gonestones/Gonestone.woff') format('woff'),        
+	url('/static/fonts/Gonestones/Gonestone.ttf') format('truetype');        
+	font-style: normal;        
+	font-weight: normal;        
+	font-display: swap;        
+}
+
+@font-face {        
+	font-family: 'Starry Cakes';        
+	src: url('/static/fonts/StarryCakes/StarryCakes.woff2') format('woff2'),        
+	url('/static/fonts/StarryCakes/StarryCakes.woff') format('woff'),        
+	url('/static/fonts/StarryCakes/StarryCakes.ttf') format('truetype');        
+	font-style: normal;        
+	font-weight: normal;        
+	font-display: swap;        
+}
+
+.AcciaFlareFont {
+    font-family: 'AcciaFlare-Light';
+    font-size:10vh
+}
+
+.GonestonesFont {
+    font-family: 'Gonestones';
+    font-size:10vh
+}
+
+.StarryCakesFont {
+    font-family: 'Starry Cakes';
+    font-size:10vh
+}
