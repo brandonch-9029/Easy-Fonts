@@ -42,3 +42,12 @@
     font-family: 'Starry Cakes';
     font-size:10vh
 }
+
+h1 {
+	font-size: 10vh;
+	margin-bottom: 3vh;
+}
+
+.btn-success {
+	font-size: 2.5vh;
+}
