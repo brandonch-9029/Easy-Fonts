@@ -21,53 +21,99 @@
   </p>
 
   <div class="card-body">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Desktop</a>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="desktop-tab" data-bs-toggle="tab" data-bs-target="#desktop-tab-pane" type="button" role="tab" aria-controls="desktop-tab-pane" aria-selected="true">Desktop</button>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Mobile</a>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="mobile-tab" data-bs-toggle="tab" data-bs-target="#mobile-tab-pane" type="button" role="tab" aria-controls="mobile-tab-pane" aria-selected="false">Mobile</button>
       </li>
     </ul>
-    <div class="table-responsive mb-3">
-      <table class="table table-striped text-center border mb-0">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Chrome</th>
-            <th scope="col">Firefox</th>
-            <th scope="col">Opera</th>
-            <th scope="col">Safari</th>
-            <th scope="col">IE / Edge</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">TTF</th>
-            <td>4</td>
-            <td>3.5</td>
-            <td>10</td>
-            <td>3.1</td>
-            <td>9</td>
-          </tr>
-          <tr>
-            <th scope="row">WOFF</th>
-            <td>5</td>
-            <td>3.6</td>
-            <td>11.5</td>
-            <td>5.1</td>
-            <td>9</td>
-          </tr>
-          <tr>
-            <th scope="row">WOFF2</th>
-            <td>36</td>
-            <td>39</td>
-            <td>23</td>
-            <td>10</td>
-            <td>14</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="desktop-tab-pane" role="tabpanel" aria-labelledby="desktop-tab" tabindex="0">
+        <div class="table-responsive mb-3">
+          <table class="table table-striped text-center border mb-0">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Chrome</th>
+                <th scope="col">Firefox</th>
+                <th scope="col">Opera</th>
+                <th scope="col">Safari</th>
+                <th scope="col">IE / Edge</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">TTF</th>
+                <td>4</td>
+                <td>3.5</td>
+                <td>10</td>
+                <td>3.1</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <th scope="row">WOFF</th>
+                <td>5</td>
+                <td>3.6</td>
+                <td>11.5</td>
+                <td>5.1</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <th scope="row">WOFF2</th>
+                <td>36</td>
+                <td>39</td>
+                <td>23</td>
+                <td>10</td>
+                <td>14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="mobile-tab-pane" role="tabpanel" aria-labelledby="mobile-tab" tabindex="0">
+        <div class="table-responsive mb-3">
+          <table class="table table-striped text-center border mb-0">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Chrome (Android)</th>
+                <th scope="col">Firefox (Android)</th>
+                <th scope="col">Android Browser</th>
+                <th scope="col">Safari (iOS) </th>
+                <th scope="col">Opera Mobile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">TTF</th>
+                <td>Supported</td>
+                <td>1</td>
+                <td>2.2</td>
+                <td>4.2</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <th scope="row">WOFF</th>
+                <td>Supported</td>
+                <td>3</td>
+                <td>4.4</td>
+                <td>5</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <th scope="row">WOFF2</th>
+                <td>Supported</td>
+                <td>39</td>
+                <td>No Support</td>
+                <td>10</td>
+                <td>37</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
 
